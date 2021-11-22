@@ -5,10 +5,24 @@ class Post extends Model {}
 
 Post.init(
   {
-    title: DataTypes.STRING,
-    body: DataTypes.STRING,
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true, 
+    },
+    title: {
+      type: DataTypes.STRING
+    },
+    body: {
+      type: DataTypes.STRING
+    },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
   },
-
   {
     sequelize,
   }
