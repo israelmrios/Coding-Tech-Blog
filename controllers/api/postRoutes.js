@@ -15,6 +15,28 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// uses put method to update posts/ Update posts not working
+router.put("/:id", withAuth, async (req, res) => {
+  try {
+    const updatedPosts = await Post.update(
+      {
+        title: req.body.title,
+        content: req.body.content,
+      },
+      { where: { id: req.params.id } },
+      // { returning: true, where: { id: req.params.id } }
+    );
+
+    res.render("dashboard", {
+      updatedPosts,
+      logged_in: true,
+    });
+    res.status(200).json(updatedPosts);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.destroy({
