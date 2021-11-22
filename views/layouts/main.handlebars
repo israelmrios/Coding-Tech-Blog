@@ -17,13 +17,9 @@
         <a href="/">Coding Tech Blog</a>
       </h1>
       <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/login">Login</a>
       </nav>
     </header>
     <main class="container container-fluid mt-5">
