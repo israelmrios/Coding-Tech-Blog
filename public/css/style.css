@@ -1,24 +1,284 @@
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+:root {
+  --main-color: #01a7e5;
+  --secondary-color: #6fc2f8;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background-color: #f2f4f4;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--main-color);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-shadow: 0 4px 6px 0 var(--secondary-color);
+}
+
+header h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+.tech {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+nav a {
+  color: white;
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+.main-container {
+  margin-top: 1.625rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.posts-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  width: 80%;
+  border: 1px solid var(--main-color);
+  margin-bottom: 1rem;
+  box-shadow: 2px 2px 3px 0 var(--secondary-color);
+  background-color: white;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  background-color: var(--main-color);
+}
+
+h2 a {
+  color: white;
+  text-decoration: none;
+  padding-left: 0.5rem;
+}
+
+.h-h-h-w p {
+  margin: 0;
+  font-weight: lighter;
+  padding: 0.3rem;
+  color: black;
+}
+
+.content-header p {
+  margin-top: 0.05rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  /* margin: 0.05rem 0.5rem 0.5rem 0.5rem; */
+}
+
+.signin-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5rem;
+  width: 60%;
+  height: 20rem;
+}
+
+.login-container,
+.singup-container {
+  border: 1px solid var(--main-color);
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* padding: 0 0 5rem 0; */
+  box-shadow: 2px 2px 3px 0 var(--secondary-color);
+  background-color: white;
+}
+
+.post-header {
+  height: 20%;
+  color: white;
+  padding-left: 1rem;
+}
+
+.login-form,
+.signup-form,
+.new-post-form {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  /* height: 80%; */
+  min-height: 250px;
+  gap: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+  color: white;
+  padding: .5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+.btn-danger {
+  background-color: red;
+  border: 1px solid red;
+  color: white;
+  padding: .5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 6px;  
+}
+
+.form-input {
+  background-color: Transparent;
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  padding: .5rem 1rem;
+  font-size: 12px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 1.5px 0 var(--secondary-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+.btn-primary:hover,
+.btn-danger:hover {
+  color: var(--secondary-color);
+}
+
+.btn-primary:active,
+.btn-danger:active {
+  transform: translateY(4px);
 }
 
 .no-button {
   background: none;
   border: none;
-  padding: 0;
+  /* padding: 1rem; */
   cursor: pointer;
-  color: #1b89bc;
+  color: white;
   text-decoration: none;
   font-size: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: row;
+  width: 100%;
+  margin: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+.welcome {
+  margin: 0;
+  margin-left: 1rem;
+}
+
+.add-post {
+  margin: 0;
+  margin-right: 1rem;
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+.add-post:active {
+  transform: translateY(4px);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  flex-direction: row;
+  padding-bottom: 0.5rem;
+}
+
+.comments-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  width: 60%;
+  border: 1px solid var(--main-color);
+  margin-bottom: 1rem;
+  box-shadow: 2px 2px 3px 0 var(--secondary-color);
+  background-color: white;
+}
+
+.comments-header {
+  background-color: white;
+  height: 20%;
+  color: var(--main-color);
+  padding-left: 1rem;
+  border-bottom: 3px solid var(--main-color);
+}
+
+.comment-card {
+  border-bottom: 1px solid var(--main-color);
+}
+
+.comment-header {
+  background-color: white;
+  height: 20%;
+  color: var(--main-color);
+  padding-left: 1rem;
+}
+
+.h-h-h-w-2 {
+  margin: 0;
+  font-weight: lighter;
+  padding: 0.3rem 0.3rem 0 0.3rem;
+  color: black;
+}
+
+.m-3 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 0;
+}
+
+.form-control {
+  width: 80%;
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+#post-name,
+#post-cont {
+  width: 100%;
+}
+
+#post-cont {
+  height: 80px;
+}
+
+.form-group {
+  width: 90%;
 }

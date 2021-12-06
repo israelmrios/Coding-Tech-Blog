@@ -1,12 +1,14 @@
 {{#each posts as |post| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
+<div class="posts-container">
+  <div class="post-header">
     <h2>
       <a href="/post/{{post.id}}">{{post.title}}</a>
-      <p>Posted by {{post.user.name}} on {{format_date post.date_created}}</p>
     </h2>
+    <div class="h-h-h-w">
+      <p>Posted by <strong>{{user.username}}</strong> on {{format_date post.date_created}}</p>      
+    </div>
   </div>
-  <div class="col-md-7">
+  <div class="content-header">
     <p>
       {{post.content}}
     </p>

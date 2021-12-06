@@ -1,44 +1,55 @@
 <div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{username}}!</h2>
+  <div>
+    <h2 class="welcome" >Welcome, <strong>{{username}}</strong>!</h2>
+  </div>
+  <div>
+    <a href="/newpost/"><i class="fas fa-plus fa-2x add-post"></i></a>
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
+
+  {{!-- <div class="col-md-6">
     <h3>Create a New Post:</h3>
 
     <form class="form new-project-form">
       <div class="form-group">
         <label for="project-name">post title:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        <input class="form-input" type="text" id="project-name" name="project-name" value = {{post.title}} />
       </div>
       <div class="form-group">
         <label for="project-desc">content:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <textarea class="form-input" id="project-desc" name="project-desc">{{post.content}}</textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
-  </div>
+  </div> --}}
 
-  {{#if posts.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Posts:</h3>
-
-    {{#each posts as |post|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
+{{!-- {{#if posts.length}} --}}
+<div>
+  <h3>My Posts:</h3>
 </div>
 
-<script src="./js/profile.js"></script>
+{{#each posts as |post|}}
+<div class="posts-container">
+  <div class="post-header">
+    <h2><a href="/updatepost/{{post.id}}">{{post.title}}</a></h2>
+  </div>
+  <div class="content-header">
+    <p>{{post.content}}</p>
+  </div>
+  {{!-- <div class="btn-container" >
+    <div>
+      <button class="btn-primary" data-id="{{post.id}}">Update</button>
+    </div>
+    <div>
+      <button class="btn-danger" data-id="{{post.id}}">DELETE</button>
+    </div>    
+  </div> --}}
+</div>
+{{/each}}
+
+{{!-- {{/if}} --}}
+
+<script src="/js/profile.js"></script>

@@ -1,0 +1,36 @@
+<div class="row">
+  <div>
+    <h2 class="welcome" >Welcome, <strong>{{user.username}}</strong>!</h2>
+  </div>
+  <div>
+    <i class="fas fa-plus fa-2x add-post"></i>    
+  </div>
+</div>
+
+<div>
+  <h3>Edit Post:</h3>
+</div>
+
+<div class="posts-container">
+  <div class="post-header">
+    <h2>Edit Post</h2>
+  </div>
+    <form class="form new-post-form">
+        <div class="form-group">
+          <label for="post-name"></label>
+          <input class="form-input" type="text" id="post-name" name="post-name" placeholder="Post Title" value="{{title}}" />
+        </div>
+        <div class="form-group">
+          <label for="post-cont"></label>
+          <textarea class="form-input" id="post-cont" name="post-cont" placeholder="Post Content">{{content}}</textarea>
+        </div>
+        <div>
+          <button type="submit" id="update" class="btn btn-primary">Update Post</button>
+        </div>
+        <div>
+          <button type="submit" id="delete" class="btn btn-danger" data-id={{id}}>DELETE</button>
+        </div>
+    </form>          
+</div>
+
+<script src="/js/updatepost.js"></script>

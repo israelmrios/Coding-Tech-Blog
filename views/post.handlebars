@@ -1,0 +1,63 @@
+<div class="posts-container">
+  <div class="post-header">
+    <h2>
+      {{title}}
+    </h2>
+    <div class="h-h-h-w">
+      <p>Created by <span style="text-transform:uppercase"><strong>{{user.username}}</strong></span> on {{format_date date_created}}</p>      
+    </div>
+  </div>
+  <div class="content-header">
+    <p>
+      {{content}}
+    </p>    
+  </div>
+</div>
+
+<div class="comments-container">
+  <div class="comments-header">
+    <h3>Comments</h3>    
+  </div>
+
+  {{#each comments as |comment|}}
+  <div class='comment-card'>
+    <div class='comment-header' id={{comment.id}}>
+      <p>{{comment.content}}</p>
+      <div class="h-h-h-w-2">
+        <small class="text-muted">Comment by <strong>{{user.username}}</strong> on {{format_date comment.date_created}}</small>
+      </div>
+    </div>
+    {{#if ../logged_in}}
+    {{#if comment.owned}}
+    <div class='btn-container' role='group'>
+      <button type='button' class='btn-danger' data-delete='{{comment.id}}' id='delete-{{comment.id}}'>DELETE</button>
+    </div>
+    {{/if}}
+    {{/if}}    
+  </div>
+  {{/each}}
+</div>
+
+{{#if logged_in}}
+<div class="comments-container">
+  <div class="comments-header">
+    <h4>Write a New Comment</h4>    
+  </div>
+
+  <div>
+    <form>
+      <div class='m-3'>
+        <label for='content' class='form-label'></label>
+        <textarea class='form-control' id='content' rows='3'></textarea>
+      </div>
+      <div class="btn-container">
+        <input class='btn btn-primary' type='submit' value='Submit' id='comment' />    
+      </div>
+    </form>
+    {{!-- <script src='../js/comment.js'></script>
+    <script src='../js/deletecomment.js'></script> --}}
+  </div>
+</div>
+{{/if}}
+
+<script src="/js/post.js"></script>
