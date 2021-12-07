@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Post, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
+// Included User Model to attach the Username of who created the Post
 router.get("/", async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -24,6 +25,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Using the Post and Comment Models to render an individual Post with its particular comments displayed
 router.get("/post/:id", async (req, res) => {
   try {
     const postId = parseInt(req.params.id);
@@ -51,6 +53,7 @@ router.get("/post/:id", async (req, res) => {
 
     const comments = commentsData.map((i) => i.get({ plain: true }));
 
+    // Mapping out the comments to find which one were written by the user logged and and adding a value of Owned in order to toggle a delete button
     comments.map((i) => {
       if (i.user_id === req.session.user_id) {
         i.owned = true;
@@ -107,6 +110,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 
+// Getting User information to attach the Username to page
 router.get("/newpost", withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {

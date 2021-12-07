@@ -1,5 +1,6 @@
 const deleteButtons = document.getElementsByClassName("btn-danger");
 
+// Using a for loop to take the deleteButton Id and sends a DELETE request to the API endpoint
 for (let i = 0; i < deleteButtons.length; i++) {
   const id = deleteButtons[i].getAttribute("data-delete");
   deleteButtons[i].addEventListener("click", async (e) => {
@@ -16,10 +17,10 @@ for (let i = 0; i < deleteButtons.length; i++) {
     } else {
       alert(response.statusText);
     }
-    console.log(route);
   });
 }
 
+// This function takes the input from the form and sends a POST request to the API endpoint
 const comment = async (event) => {
   event.preventDefault();
 

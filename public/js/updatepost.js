@@ -1,3 +1,4 @@
+// This function will take the input from the form and send a PUT request to the API
 const updateHandler = async (event) => {
   event.preventDefault();
   const pathName = window.location.pathname;
@@ -9,7 +10,7 @@ const updateHandler = async (event) => {
 
   if (title && content) {
     const response = await fetch(`/api/posts/${post_id}`, {
-      method: "Put",
+      method: "PUT",
       body: JSON.stringify({ title, content, post_id }),
       headers: {
         "Content-Type": "application/json",
@@ -24,6 +25,7 @@ const updateHandler = async (event) => {
   }
 };
 
+// This function will take the post_id and send a DELETE request to the API
 const deleteHandler = async (event) => {
   if (event.target.hasAttribute("data-id")) {
     const id = event.target.getAttribute("data-id");

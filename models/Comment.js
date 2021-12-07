@@ -14,6 +14,7 @@ Comment.init(
     content: {
       type: DataTypes.STRING,
     },
+    // Added date_created row to keep track of the date the comment was created
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,

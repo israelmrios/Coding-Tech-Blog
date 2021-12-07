@@ -20,15 +20,17 @@
     <h3>Comments</h3>
   </div>
 
+  <!-- Using a Lookup Helper to render comments as an individual comment -->
   {{#each comments as |comment|}}
   <div class='comment-card'>
     <div class='comment-header' id={{comment.id}}>
       <p>{{comment.content}}</p>
       <div class="h-h-h-w-2">
-        <small class="text-muted">Comment by <strong>{{user.username}}</strong> on {{format_date
+        <small class="text-muted">Comment by <span style="text-transform:uppercase"><strong>{{user.username}}</strong></span> on {{format_date
           comment.date_created}}</small>
       </div>
     </div>
+    <!-- Using an If Conditional Helper to block the Comment Delete Button if the user is not logged in and if they do not own the comment -->
     {{#if ../logged_in}}
     {{#if comment.owned}}
     <div class='btn-container' role='group'>
@@ -40,6 +42,7 @@
   {{/each}}
 </div>
 
+<!-- Using an If Conditional Helper to block the New Comment option if user is not logged in -->
 {{#if logged_in}}
 <div class="comments-container">
   <div class="comments-header">

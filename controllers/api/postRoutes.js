@@ -15,7 +15,7 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
-// uses put method to update posts/ Update posts not working
+// Updates the Post and reloads the dashboard page
 router.put("/:id", withAuth, async (req, res) => {
   try {
     const updatedPosts = await Post.update(
@@ -36,6 +36,7 @@ router.put("/:id", withAuth, async (req, res) => {
   }
 });
 
+// This route deletes a Post
 router.delete("/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.destroy({

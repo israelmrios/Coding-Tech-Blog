@@ -1,3 +1,5 @@
+// This function will take the form input and send a POST request to the API
+// NOTE: This file is called profile.js but is being used for the newpost.handlebars page/form
 const newFormHandler = async (event) => {
   event.preventDefault();
 
