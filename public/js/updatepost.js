@@ -18,9 +18,9 @@ const updateHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/dashboard");
+      return document.location.replace("/dashboard");
     } else {
-      alert("Failed to update post");
+      return alert("Failed to update post");
     }
   }
 };
