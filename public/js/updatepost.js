@@ -8,7 +8,6 @@ const updateHandler = async (event) => {
   const content = document.querySelector("#post-cont").value.trim();
 
   if (title && content) {
-    // const id = event.target.getAttribute("data-id");
     const response = await fetch(`/api/posts/${post_id}`, {
       method: "Put",
       body: JSON.stringify({ title, content, post_id }),

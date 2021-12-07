@@ -9,10 +9,10 @@ Comment.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true, 
+      autoIncrement: true,
     },
     content: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
     },
     date_created: {
       type: DataTypes.DATE,
@@ -22,15 +22,15 @@ Comment.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'id',
+        model: "user",
+        key: "id",
       },
     },
     post_id: {
-      type:DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       references: {
-        model: 'post',
-        key: 'id',
+        model: "post",
+        key: "id",
       },
     },
   },
