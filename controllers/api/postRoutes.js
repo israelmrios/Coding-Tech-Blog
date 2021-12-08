@@ -26,6 +26,7 @@ router.put("/:id", withAuth, async (req, res) => {
       { where: { id: req.params.id } }
     );
 
+    // Status 200 is not returned to client, it was because there were two res statements
     // res.render("dashboard", {
     //   updatedPosts,
     //   logged_in: true,
@@ -46,10 +47,11 @@ router.delete("/:id", withAuth, async (req, res) => {
       },
     });
 
-    if (!postData) {
-      res.status(404).json({ message: "No post found with this id!" });
-      return;
-    }
+    // Status 200 is not returned to client, it can be because of this if statement
+    // if (!postData) {
+    //   res.status(404).json({ message: "No post found with this id!" });
+    //   return;
+    // }
 
     res.status(200).json(postData);
   } catch (err) {

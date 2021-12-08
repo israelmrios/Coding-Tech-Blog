@@ -28,7 +28,7 @@ const updateHandler = async (event) => {
 // This function will take the post_id and send a DELETE request to the API
 const deleteHandler = async (event) => {
   if (event.target.hasAttribute("data-id")) {
-    const id = event.target.getAttribute("data-id");
+    const post_id = event.target.getAttribute("data-id");
 
     const response = await fetch(`/api/posts/${post_id}`, {
       method: "DELETE",
