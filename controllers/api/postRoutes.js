@@ -26,10 +26,10 @@ router.put("/:id", withAuth, async (req, res) => {
       { where: { id: req.params.id } }
     );
 
-    res.render("dashboard", {
-      updatedPosts,
-      logged_in: true,
-    });
+    // res.render("dashboard", {
+    //   updatedPosts,
+    //   logged_in: true,
+    // });
     res.status(200).json(updatedPosts);
   } catch (err) {
     res.status(400).json(err);
